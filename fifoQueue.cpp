@@ -19,10 +19,10 @@ void FifoQueue::push(Customer temp){
 }
 
  Customer FifoQueue::pop(){
-    if (first == nullptr){
-        return NULL;
-    }
-    else {
+    //if (first == nullptr){
+        //return NULL; // get back to this later
+    //}
+    //else {
         Customer temp(first->getArrivalTime());
         temp.SetStartOfServiceTime(first->getServiceTime());
         temp.setNextCust(first->getNext());
@@ -33,7 +33,7 @@ void FifoQueue::push(Customer temp){
         }
         return temp;
 
-    }
+    //}
  }
 
  Customer FifoQueue::peek(){
