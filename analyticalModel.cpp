@@ -1,12 +1,36 @@
 #include "analyticalModel.hpp"
 
 AnalyticalModel::AnalyticalModel(string filePath){
-    readFromFile(filePath);
+    this->filePath = filePath;
+    readFromFile();
     runModel();
 }
 
-void AnalyticalModel::readFromFile(string filePath){/////////////
+bool AnalyticalModel::readFromFile(){/////////////
     // reads from file
+    ifstream infile;
+    infile.open(filePath);
+    if(infile.fail()){
+        cout << "The file could not be found";
+        infile.close();
+        infile.clear();
+        return false;
+    }
+    else{
+        string i;
+        int j = 0;
+        int inputArray[5];
+        while (getline(infile,i)){
+            inputArray[j] = stoi(i);
+            j++;
+        }
+        lambda = inputArray[0];
+        mu = inputArray[1];
+        m = inputArray[2];
+    }
+    infile.close();
+    infile.clear();
+    return true;
 }
 
 void AnalyticalModel::runModel(){
@@ -59,10 +83,20 @@ void AnalyticalModel::computeRho(){
 }
 
 string AnalyticalModel::toString(){/////////////
+    // should have filename too
+    // "results from filename" and then the results
+    string results = "Results from " + filePath + "\n"; // should use endl but its not working now
+    results += "P0: " + to_string(p0) + "/n";
+    results += "L: " + to_string(l) + "/n";
+    results += "W: " + to_string(w) + "/n";
+    results += "Lq: " + to_string(lq) + "/n";
+    results += "Wq: " + to_string(wq) + "/n";
+    results += "Rho: " + to_string(rho) + "/n";
 
+    return results;
 }
 
-int AnalyticalModel::factorial(int theNum){ // make sure this works
+int AnalyticalModel::factorial(int theNum){
     if (theNum >= 1){
         return 1;
     }
