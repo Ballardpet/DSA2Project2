@@ -46,15 +46,12 @@ void AnalyticalModel::runModel(){
 void AnalyticalModel::computeP0(){
     double bottomLeft = 0;
     double bottomRight = 0;
-    for (int i = 0; i < m; i++) {
-        bottomLeft +=  ((1/factorial(i)) * pow((lambda / mu), i));
+    for (int i = 0; i < m; i++) { //man this loop is actually fine
+        bottomLeft +=  ((1/factorial(i)) * (pow((lambda / mu), i)));
     }
-    bottomRight = (1/factorial(m));
-    bottomRight *= pow((lambda/mu),m); // make sure *= actually works how I would expect
-    bottomRight *= ((m * mu)/((m * mu)-lambda));
+    bottomRight = (pow((lambda/mu),m)/factorial(m));
+    bottomRight *= ((m * mu)/((m *mu)-lambda));
     p0 = (1 / (bottomLeft + bottomRight));
-    // test:
-    p0 = 0.5;
 }
 
 void AnalyticalModel::computeL(){
