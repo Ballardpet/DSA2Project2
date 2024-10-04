@@ -9,9 +9,13 @@ using namespace std;
 // make a seperate customer class !!!!
 class FifoQueue{
     public:
-        void push();
+        FifoQueue();
+        void push(Customer temp);
         Customer pop();
+        Customer peek();
     private:
+        Customer* first;
+        Customer* last;
 };
 
 #endif

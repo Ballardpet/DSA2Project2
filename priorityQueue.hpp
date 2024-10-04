@@ -7,6 +7,7 @@ using namespace std;
 
 // pretty sure this represents the available tellers
 // min heap
+// cap at 200
 class PriorityQueue{
     public:
     private:
