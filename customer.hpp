@@ -14,6 +14,7 @@ class Customer{
     private:
         float arrivalTime;
         float startOfServiceTime;
+        float departureTime;
         Customer* nextCust; // linked for fifo
         // make copy constrtuctors and such !!!!!!!!!!!!!!!!!!!!
 };

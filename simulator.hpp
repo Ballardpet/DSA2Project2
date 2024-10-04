@@ -1,14 +1,24 @@
 #ifndef SIMULATOR_HPP
 #define SIMULATOR_HPP
 using namespace std;
+#include "fifoQueue.hpp"
+#include "priorityQueue.hpp"
 
 // pretty sure this simulates time passing and customers coming in
 class Simulator{
     public:
         Simulator();
         void getNextRandomInterval(float avg); // avg can be lmbda or mu
+        void processNextEvent();
+        void runSimulation();
+        void processStatistics();
     private:
         int numEvents; // number of events to simulate
+        FifoQueue fifo;
+        PriorityQueue pq;
+        double lambda;
+        double mu;
+        int m;
 
 };
 
