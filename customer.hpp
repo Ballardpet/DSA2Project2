@@ -2,8 +2,6 @@
 #define CUSTOMER_HPP
 using namespace std;
 
-// pretty sure this is the line the customers are waiting in
-// make a seperate customer class !!!!
 class Customer{
     public:
         Customer(float arrivalTime);
