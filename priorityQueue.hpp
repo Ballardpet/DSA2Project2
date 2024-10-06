@@ -11,6 +11,8 @@ using namespace std;
 // cap at 200
 class PriorityQueue{
     public:
+        PriorityQueue();
+        bool isEmpty();
     private:
         int M; // Number of channels. IDK if this even goes here
         void percolateUp();

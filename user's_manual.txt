@@ -1,0 +1,3 @@
+probably say something like:
+    analytical model class works as expected
+    ran out of time and was not able to properly complete simulator class (mabye describe what sim should do)

@@ -81,7 +81,7 @@ void AnalyticalModel::computeRho(){
 }
 
 string AnalyticalModel::toString(){
-    string results = "Results from " + filePath + "\n";
+    string results = "Analytical model results from " + filePath + "\n";
     results += "P0 = " + to_string(p0) + "\n";
     results += "L = " + to_string(l) + "\n";
     results += "W = " + to_string(w) + "\n";

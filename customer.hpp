@@ -4,6 +4,7 @@ using namespace std;
 
 class Customer{
     public:
+        Customer();
         Customer(float arrivalTime);
         void setLengthForService(float serviceLength);
         void setArrivalTime(float time);

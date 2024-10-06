@@ -12,32 +12,31 @@ using namespace std;
 class Simulator{
     public:
         Simulator(string filePath);
-        bool readFromFile(string filePath);
+        bool readFromFile();
         float getNextRandomInterval(float avg); // avg can be lmbda or mu
         void processNextEvent();
         void runSimulation();
         void processStatistics();
-
+        void basedOffPseudoode();
         void makeCustomers();
     private:
-        int numEvents; // number of events to simulate
-        FifoQueue line; // customers in line
-        PriorityQueue pq;
+        FifoQueue line; // customer storage. should only hold arrival times
+        PriorityQueue pq; // event storage. should only hold departure times
         double lambda;
         double mu;
         int m;
         int numCustomers;
+        int serverAvailableCount;
 
-        void addArrival(Customer* cust);
-        void addDeparture(Customer* cust);
-        void removeArrival(); // might need a customer?
-        void removeDeparture();
+        void processArrival(Customer cust);
+        void processDeparture (Customer cust);
 
-        //FifoQueue completed; // stores customers when they finish so their data can be collected
         vector<Customer> completed; // stores customers when they finish so their data can be collected
+        float currentTime; // keeps track of the current time in the program
         float emptyTime; // keeps track of how long the line is empty
+        string filePath;
 
-
+        void IRanOutOfTime(); // function to give me some output because I ran out of time on the project
 };
 
 #endif

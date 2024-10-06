@@ -13,6 +13,7 @@ class FifoQueue{
         void push(Customer temp);
         Customer pop();
         Customer peek();
+        bool isEmpty();
     private:
         Customer* first;
         Customer* last;

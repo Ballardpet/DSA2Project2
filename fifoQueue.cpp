@@ -42,3 +42,7 @@ void FifoQueue::push(Customer temp){
     temp.setNextCust(first->getNext());
     return temp; // wrong. should delete temp. need to find a way to dereference customers
  }
+
+ bool FifoQueue::isEmpty(){
+    return true;
+ }
