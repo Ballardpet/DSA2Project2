@@ -42,7 +42,7 @@ bool AnalyticalModel::readFromFile(){
 
 void AnalyticalModel::runModel(){
     
-    computeP0(); // error is in p0, but everything else works :)
+    computeP0();
     computeL();
     computeW();
     computeLq();
