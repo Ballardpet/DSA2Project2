@@ -24,7 +24,9 @@ Setup and Compilation
     *priorityQueue.hpp
     *simulator.cpp
     *simulator.hpp
+
     *sysnet1 UML.png
+    
     *test1.txt (The input file for test 1)
     *test2.txt (The input file for test 2)
     *user's_manual.txt (this file)
