@@ -46,7 +46,7 @@ void AnalyticalModel::runModel(){
 void AnalyticalModel::computeP0(){
     double bottomLeft = 0;
     double bottomRight = 0;
-    for (int i = 0; i < m; i++) { //man this loop is actually fine
+    for (int i = 0; i < m; i++) { 
         bottomLeft +=  ((1/factorial(i)) * (pow((lambda / mu), i)));
     }
     bottomRight = (pow((lambda/mu),m)/factorial(m));
@@ -80,10 +80,8 @@ void AnalyticalModel::computeRho(){
     rho = (lambda/(m*mu));
 }
 
-string AnalyticalModel::toString(){/////////////
-    // should have filename too
-    // "results from filename" and then the results
-    string results = "Results from " + filePath + "\n"; // should use endl but its not working now
+string AnalyticalModel::toString(){
+    string results = "Results from " + filePath + "\n";
     results += "P0 = " + to_string(p0) + "\n";
     results += "L = " + to_string(l) + "\n";
     results += "W = " + to_string(w) + "\n";
@@ -103,12 +101,4 @@ int AnalyticalModel::factorial(int theNum){
         temp *= i;
     }
     return temp;
-    /*
-    if (theNum >= 1){
-        return 1;
-    }
-    else {
-        return theNum * factorial(theNum-1);
-    }
-    */
 }

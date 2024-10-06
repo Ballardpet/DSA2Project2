@@ -7,6 +7,10 @@ Customer::Customer(float arrivalTime){
     nextCust = nullptr;
 }
 
+void Customer::setLengthForService(float serviceLength){
+    timeForService = serviceLength;
+}
+
 void Customer::setArrivalTime(float time){
     arrivalTime = time;
 }

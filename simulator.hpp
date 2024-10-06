@@ -3,22 +3,40 @@
 using namespace std;
 #include "fifoQueue.hpp"
 #include "priorityQueue.hpp"
+#include <vector>
+#include <string>
+#include <iostream>
+#include <fstream>
 
 // pretty sure this simulates time passing and customers coming in
 class Simulator{
     public:
-        Simulator();
-        void getNextRandomInterval(float avg); // avg can be lmbda or mu
+        Simulator(string filePath);
+        bool readFromFile(string filePath);
+        float getNextRandomInterval(float avg); // avg can be lmbda or mu
         void processNextEvent();
         void runSimulation();
         void processStatistics();
+
+        void makeCustomers();
     private:
         int numEvents; // number of events to simulate
-        FifoQueue fifo;
+        FifoQueue line; // customers in line
         PriorityQueue pq;
         double lambda;
         double mu;
         int m;
+        int numCustomers;
+
+        void addArrival(Customer* cust);
+        void addDeparture(Customer* cust);
+        void removeArrival(); // might need a customer?
+        void removeDeparture();
+
+        //FifoQueue completed; // stores customers when they finish so their data can be collected
+        vector<Customer> completed; // stores customers when they finish so their data can be collected
+        float emptyTime; // keeps track of how long the line is empty
+
 
 };
 

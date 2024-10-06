@@ -5,6 +5,7 @@ using namespace std;
 class Customer{
     public:
         Customer(float arrivalTime);
+        void setLengthForService(float serviceLength);
         void setArrivalTime(float time);
         void SetStartOfServiceTime(float time);
         void setNextCust(Customer* next);
@@ -14,8 +15,11 @@ class Customer{
     private:
         float arrivalTime;
         float startOfServiceTime;
-        float departureTime;
+        float departureTime; // startOfServiceTime + timeForService
         Customer* nextCust; // linked for fifo
+
+        float timeForService;
+        float timeWaiting; // calculated from startOfServiceTime - arrivalTime
         // make copy constrtuctors and such !!!!!!!!!!!!!!!!!!!!
 };
 
