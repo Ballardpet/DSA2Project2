@@ -1,3 +1,76 @@
 probably say something like:
     analytical model class works as expected
     ran out of time and was not able to properly complete simulator class (mabye describe what sim should do)
+
+
+Peter Ballard
+Data Structures and Algorithms II
+Project 2
+User's Manual
+
+
+Setup and Compilation
+1. Download and unzip the file from Canvas.
+2. This submission should include
+    *analyticalModel.cpp
+    *analyticalModel.hpp
+    *customer.cpp
+    *customer.hpp
+    *fifoQueue.cpp
+    *fifoQueue.hpp
+    *main.cpp
+    *Makefile
+    *priorityQueue.cpp
+    *priorityQueue.hpp
+    *simulator.cpp
+    *simulator.hpp
+    *sysnet1 UML.png
+    *test1.txt (The input file for test 1)
+    *test2.txt (The input file for test 2)
+    *user's_manual.txt (this file)
+3. Environment: This program has been tested in the mult-platform lab and will run there
+4. Compiling: This program includes a Makefile. At the command line in Linux, type make. 
+    The program will compile an executale name "main"
+
+
+Running the program: Be sure that "test1.txt" and "test2.txt" are in the same directory as the executable. 
+Issue the command "./main". No command line arguments are required or checked.
+
+User Input: No user input is required for this program.
+
+Output: This program will output the results of the test to the command line. The results for test 1 on analyticalModel
+and simulator will be displayed first, followed by the results for test 2. The command line output will similar
+to the following: 
+
+
+Analytical model results from test1.txt
+P0 = 0.500000
+L = 0.750000
+W = 0.375000
+Lq = 0.083333
+Wq = 0.041667
+Rho = 0.333333
+
+Simulator results from test1.txt
+P0 = 0.534019
+L = 0.733157
+W = 0.396232
+Lq = 0.088334
+Wq = 0.045103
+Rho = 0.313169
+
+Analytical model results from test2.txt
+P0 = 0.538006
+L = 0.836927
+W = 0.167385
+Lq = 0.003594
+Wq = 0.000719
+Rho = 0.208333
+
+Simulator results from test2.txt
+P0 = 0.520070
+L = 0.881294
+W = 0.159278
+Lq = 0.003629
+Wq = 0.000716
+Rho = 0.213161
