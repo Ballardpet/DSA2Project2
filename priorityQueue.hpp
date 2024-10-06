@@ -1,20 +1,22 @@
-// this will be made out of a heap
-// It will hold arrival events and departure events
+/**********************************************************
+ * Author:      Peter Ballard
+ * Assignment:  Project 2
+ * Date:        10-06-2024
+ * File:        priorityQueue.hpp
+ * Description: A priority queue to keep track of the arrivals and departures of customers. should be implemented as a heap
+ **********************************************************/
 
 #ifndef PRIORITYQUEUE_HPP
 #define PRIORITYQUEUE_HPP
 #include "customer.hpp"
 using namespace std;
 
-// pretty sure this represents the available tellers
-// min heap
-// cap at 200
 class PriorityQueue{
     public:
         PriorityQueue();
         bool isEmpty();
     private:
-        int M; // Number of channels. IDK if this even goes here
+        int M;
         void percolateUp();
         void percolateDown();
         Customer custHeap[200];

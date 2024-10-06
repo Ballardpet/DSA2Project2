@@ -1,3 +1,11 @@
+/**********************************************************
+ * Author:      Peter Ballard
+ * Assignment:  Project 2
+ * Date:        10-06-2024
+ * File:        customer.cpp
+ * Description: Implements the Customer methods
+ **********************************************************/
+
 #include "customer.hpp"
 #include <stdlib.h>
 #include <iostream>

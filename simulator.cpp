@@ -1,3 +1,13 @@
+/**********************************************************
+ * Author:      Peter Ballard
+ * Assignment:  Project 2
+ * Date:        10-06-2024
+ * File:        simulator.cpp
+ * Description: Implements the Simulator methods
+ * Note: This is an unfinished class. I created the "IRanOutOfTime" method to give the program
+ *       an acutal output, but the simulator class does not work. (AnalyticalModel works as intended)
+ **********************************************************/
+
 #include "simulator.hpp"
 
 
@@ -38,9 +48,9 @@ bool Simulator::readFromFile(){
     return true;
 }
 
-float Simulator::getNextRandomInterval(float avg){ ///////// NOTE: might need to input at 1/avg or some shit. not sure about the wording of what lambda and mu mean
+float Simulator::getNextRandomInterval(float avg){ // NOTE: might need to input at 1/avg or something not sure about the wording of what lambda and mu mean
     // can take in lambda (avg numbe of arrivals per time unit) or mu (avg number of customers we can service per unit time)
-    float f = static_cast<float>(rand()) / static_cast<float>(RAND_MAX); // generate a randomf float from more than 0 to 1 (can be one). MIGHT NEED TO CHANGE THIS CODE
+    float f = static_cast<float>(rand()) / static_cast<float>(RAND_MAX); // generate a randomf float from more than 0 to 1 (can be one).
     float intervalTime = -1 * (1.0/avg) * f; // should be ln(f)
     return intervalTime;
 }
@@ -48,16 +58,13 @@ float Simulator::getNextRandomInterval(float avg){ ///////// NOTE: might need to
 void Simulator::runSimulation(){
     while (!line.isEmpty()){ // runs until there are no more customers
         //do stuff
-
         if (pq.isEmpty()){// if pq is EMPTY, get customer from fifo and increment empty time
             currentTime = line.peek().getArrivalTime();
             processArrival(line.pop());
         }
         else if (serverAvailableCount == 0){// if pq is full, increment time to next departure
-
         }
         else {// if pq has space, get customer from fifo
-
         }
     }
 }
@@ -72,15 +79,13 @@ void Simulator::basedOffPseudoode(){
 
 void Simulator::processNextEvent(){
     // if next event is arrival
-    
-
     // else process departure
 }
 
-void Simulator::makeCustomers(){ // should be good
+void Simulator::makeCustomers(){
     float timeCounter = 0;
     for (int i = 0; i < numCustomers; i++){
-        timeCounter += getNextRandomInterval(lambda); // keeps track of time of customer arrival // might not be lambda. whatever is needed for arrival time
+        timeCounter += getNextRandomInterval(lambda); // keeps track of time of customer arrival
         Customer temp(timeCounter); // creates a customer at arrival time timeCounter
         temp.setLengthForService(mu); // randomly creates how long the customer's transaction will take
         line.push(temp); // adds the customer to the fifo queue
@@ -130,28 +135,6 @@ void Simulator::IRanOutOfTime(){ // helper function to give an output even thoug
 
     cout << results;
 }
-
-/*
-void Simulator::addArrival(Customer* cust)[
-    // adds arrival to pq
-    // decrements serveravailablecount
-    addDeparture(cust);
-    serverAvailableCount --;
-]
-
-void Simulator::addDeparture(Customer* cust){
-    // adds departure to pq
-}
-
-void Simulator::removeArrival(){
-
-}
-
-void Simulator::removeDeparture(){ // removes departure and increments serveravailablecount
-    serverAvailableCount ++;
-}
-*/
-
 
 /**
  * start by generating all customers and putting them in the fifo

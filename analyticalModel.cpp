@@ -1,9 +1,17 @@
+/**********************************************************
+ * Author:      Peter Ballard
+ * Assignment:  Project 2
+ * Date:        10-06-2024
+ * File:        analyticalModel.cpp
+ * Description: Implements the AnalyticalModel methods
+ **********************************************************/
+
 #include "analyticalModel.hpp"
 
 AnalyticalModel::AnalyticalModel(string filePath){
     this->filePath = filePath;
-    readFromFile(); //this works file
-    runModel(); //error is somewhere here
+    readFromFile();
+    runModel();
 }
 
 bool AnalyticalModel::readFromFile(){

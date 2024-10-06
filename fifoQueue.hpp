@@ -1,12 +1,16 @@
-// will hold arrivals wating for service
+/**********************************************************
+ * Author:      Peter Ballard
+ * Assignment:  Project 2
+ * Date:        10-06-2024
+ * File:        fifoQueue.hpp
+ * Description: A first-in, first-out queue to represent a line of customers waiting
+ **********************************************************/
 
 #ifndef FIFOQUEUE_HPP
 #define FIFOQUEUE_HPP
 #include "customer.hpp"
 using namespace std;
 
-// pretty sure this is the line the customers are waiting in
-// make a seperate customer class !!!!
 class FifoQueue{
     public:
         FifoQueue();

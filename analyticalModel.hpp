@@ -1,3 +1,11 @@
+/**********************************************************
+ * Author:      Peter Ballard
+ * Assignment:  Project 2
+ * Date:        10-06-2024
+ * File:        analyticalModel.hpp
+ * Description: takes in input from a test file and uses formulas to calculate statistical information
+ **********************************************************/
+
 #ifndef ANALYTICALMODEL_HPP
 #define ANALYTICALmODEL_HPP
 #include <string>

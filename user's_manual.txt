@@ -16,6 +16,7 @@ Setup and Compilation
     *analyticalModel.hpp
     *customer.cpp
     *customer.hpp
+    *DSA2_Proj2_UML_pjb28.png
     *fifoQueue.cpp
     *fifoQueue.hpp
     *main.cpp
@@ -24,9 +25,6 @@ Setup and Compilation
     *priorityQueue.hpp
     *simulator.cpp
     *simulator.hpp
-
-    *sysnet1 UML.png
-    
     *test1.txt (The input file for test 1)
     *test2.txt (The input file for test 2)
     *user's_manual.txt (this file)

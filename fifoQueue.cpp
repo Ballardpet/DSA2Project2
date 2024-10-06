@@ -1,3 +1,11 @@
+/**********************************************************
+ * Author:      Peter Ballard
+ * Assignment:  Project 2
+ * Date:        10-06-2024
+ * File:        fifoqueue.cpp
+ * Description: Implements the FifoQueue methods
+ **********************************************************/
+
 #include "fifoQueue.hpp"
 #include <stdlib.h>
 #include <iostream>

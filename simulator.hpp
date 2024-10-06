@@ -1,3 +1,14 @@
+/**********************************************************
+ * Author:      Peter Ballard
+ * Assignment:  Project 2
+ * Date:        10-06-2024
+ * File:        simulator.hpp
+ * Description: This class will simulate the random arrival of customers and keep track of 
+ *              various statistics based on their vist
+ * Note: This is an unfinished class. I created the "IRanOutOfTime" method to give the program
+ *       an acutal output, but the simulator class does not work.
+ **********************************************************/
+
 #ifndef SIMULATOR_HPP
 #define SIMULATOR_HPP
 using namespace std;

@@ -1,3 +1,11 @@
+/**********************************************************
+ * Author:      Peter Ballard
+ * Assignment:  Project 2
+ * Date:        10-06-2024
+ * File:        customer.hpp
+ * Description: Creates a customer to be stored in the queues and simulated in the simulator
+ **********************************************************/
+
 #ifndef CUSTOMER_HPP
 #define CUSTOMER_HPP
 using namespace std;
